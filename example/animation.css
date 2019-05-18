@@ -1,0 +1,48 @@
+@charset "UTF-8";
+@namespace url(http://www.w3.org/1999/xhtml);
+
+.animation {
+    animation: none;
+  }
+
+.animation2 {
+    animation: none;
+  }
+
+.animation3 {
+    animation: none;
+  }
+
+.animation4 {
+    animation: none;
+  }
+
+@media screen and (min-width: 40em) {
+  .animation {
+    border: 1px solid black;
+  }
+}
+
+@media screen and (min-width: 50em) {
+    .animation2 {
+      border: 1px solid black;
+    }
+  }
+
+@media screen and (min-width: 60em) {
+    .animation2 {
+      border: 1px solid gray;
+    }
+}
+
+@supports (display: grid) {
+    .animation2 {
+      border: 1px solid blue;
+    }
+}
+
+@supports (display: grid) {
+    .animation2 {
+      border: 1px solid red;
+    }
+  }

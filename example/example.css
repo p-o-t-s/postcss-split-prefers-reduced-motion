@@ -1,0 +1,98 @@
+@charset "UTF-8";
+@namespace url(http://www.w3.org/1999/xhtml);
+
+.animation {
+  display: block;
+  background-color: #000;
+  color: #fff;
+  animation: foo 1s linear infinite both;
+}
+
+.animation2 {
+  display: block;
+  background-color: darkgreen;
+  color: #fff;
+  animation: foo 1s linear infinite both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animation {
+    animation: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animation2 {
+    animation: none;
+  }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  .animation3 {
+    animation: none;
+  }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  .animation4 {
+    animation: none;
+  }
+}
+
+@media screen and (prefers-reduced-motion: no-preference) {
+  @media screen and (min-width: 60em) {
+    .animation2 {
+      animation: foo 2s linear infinite both;
+    }
+  }
+}
+
+@media screen and (min-width: 40em) {
+  .animation {
+    border: 1px solid black;
+  }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  @media screen and (min-width: 50em) {
+    .animation2 {
+      border: 1px solid black;
+    }
+  }
+}
+
+@media screen and (min-width: 60em) {
+  @media screen and (prefers-reduced-motion: reduce) {
+    .animation2 {
+      border: 1px solid gray;
+    }
+  }
+}
+
+@supports (display: grid) {
+  @media screen and (prefers-reduced-motion: reduce) {
+    .animation2 {
+      border: 1px solid blue;
+    }
+  }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  @supports (display: grid) {
+    .animation2 {
+      border: 1px solid red;
+    }
+  }
+}
+
+@keyframes foo {
+  0% {
+    transform: translate(0);
+  }
+  50% {
+    transform: translate(0, 1rem);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
